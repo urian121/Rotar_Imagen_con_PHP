@@ -22,7 +22,9 @@ if ($extension == $png || $extension == $PNG) {
     imagejpeg($rotatejpg,"filesImgs/". $archivoImgName);
 }
 else{
-   echo "Formato de Imagen no Valido...";
+   $imgif   = imagecreatefromgif($archivoImg);
+    $rotategif  = imagerotate($imgif, $grado, 0);
+    imagegif($rotategif,"filesImgs/". $archivoImgName);
 }
 ?>
 
